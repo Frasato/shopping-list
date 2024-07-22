@@ -5,7 +5,7 @@ const Context = createContext();
 const MyProvider = ({children}) =>{
 
     const [item, setItem] = useState("");
-    const [number, setNumber] = useState(0);
+    const [number, setNumber] = useState();
 
     return(
         <Context.Provider value={{item, setItem, number, setNumber}}>

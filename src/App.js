@@ -1,12 +1,10 @@
-import CreateItem from "./Components/CreateItem/CreateItem.js";
-import ListItems from "./Components/ListItems/ListItems.js";
 import MyProvider from "./Context/Context.js";
+import RoutesShop from "./routes.js";
 
 export default function App() {
   return (
     <MyProvider>
-      <CreateItem/>
-      <ListItems/>
+      <RoutesShop/>
     </MyProvider>
   );
 }
