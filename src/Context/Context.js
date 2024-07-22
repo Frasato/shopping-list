@@ -4,11 +4,10 @@ const Context = createContext();
 
 const MyProvider = ({children}) =>{
 
-    const [item, setItem] = useState("");
-    const [number, setNumber] = useState();
+    const [items, setItems] = useState([]);
 
     return(
-        <Context.Provider value={{item, setItem, number, setNumber}}>
+        <Context.Provider value={{items, setItems}}>
             {children}
         </Context.Provider>
     );

@@ -1,16 +1,18 @@
 import { useContext } from "react";
 import { Context } from "../../Context/Context";
+import Item from './Item/Item.js';
 
 export default function ListItems(){
 
-    const {item, number} = useContext(Context);
+    const {items} = useContext(Context);
 
     return(
         <div>
-            <h1>{item}</h1>
-            <h2>{number}</h2>
-            <input type="checkbox"/>
-            <button>Delete</button>
+            {items.map((item, id)=>{
+                return(
+                    <Item key={id} itemName={item.itemName} itemValue={item.itemQuantity}/>
+                )
+            })}
         </div>
     );
 }

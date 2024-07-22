@@ -5,8 +5,7 @@ export default function CreateItem(){
 
     const [name, setName] = useState('');
     const [quantity, setQuantity] = useState();
-    const {setItem} = useContext(Context);
-    const {setNumber} = useContext(Context);
+    const {items, setItems} = useContext(Context);
 
     function handleName(element){
         setName(element.target.value);
@@ -16,9 +15,19 @@ export default function CreateItem(){
         setQuantity(element.target.value);
     }
 
-    function handleAdd(){
-        setItem(name);
-        setNumber(quantity);
+    function handleAdd(event){
+        event.preventDefault();
+        if(name !== '' && quantity !== 0){
+            const itemsObj = [
+                {
+                    itemName: name,
+                    itemQuantity: quantity,
+                }
+            ];
+            setItems([...items, ...itemsObj]);
+            setName('');
+            setQuantity(0);
+        }
     }
 
     return(
