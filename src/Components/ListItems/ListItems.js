@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Context } from "../../Context/Context";
 import Item from './Item/Item.js';
+import { Link } from "react-router-dom";
 
 export default function ListItems(){
 
@@ -8,11 +9,14 @@ export default function ListItems(){
 
     return(
         <div>
-            {items.map((item, id)=>{
-                return(
-                    <Item key={id} itemName={item.itemName} itemValue={item.itemQuantity}/>
-                )
-            })}
+            <Link to="/create">Create</Link>
+            <div className="items">
+                {items.map((item, id)=>{
+                    return(
+                        <Item key={id} itemName={item.itemName} itemValue={item.itemQuantity}/>
+                    )
+                })}
+            </div>
         </div>
     );
 }

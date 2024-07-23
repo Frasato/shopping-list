@@ -4,7 +4,7 @@ import { Context } from "../../Context/Context";
 export default function CreateItem(){
 
     const [name, setName] = useState('');
-    const [quantity, setQuantity] = useState();
+    const [quantity, setQuantity] = useState(0);
     const {items, setItems} = useContext(Context);
 
     function handleName(element){
@@ -17,7 +17,7 @@ export default function CreateItem(){
 
     function handleAdd(event){
         event.preventDefault();
-        if(name !== '' && quantity !== 0){
+        if(name !== '' && quantity > 0){
             const itemsObj = [
                 {
                     itemName: name,
@@ -33,7 +33,7 @@ export default function CreateItem(){
     return(
         <div>
             <input type="text" placeholder="Item name" value={name} onChange={handleName} required/>
-            <input type="number" placeholder="000" value={quantity} onChange={handleQuantity} required/>
+            <input type="number" placeholder="000" value={quantity || ''} onChange={handleQuantity} required/>
             <button onClick={handleAdd}>Add</button>
         </div>
     );

@@ -1,8 +1,8 @@
-export default function Item(props){
+export default function Item({itemName, itemValue}){
     return(
         <div>
-            <h1>{props.itemName}</h1>
-            <h2>{props.itemValue}</h2>
+            <h1>{itemName}</h1>
+            <h2>{itemValue}</h2>
             <input type="checkbox"/>
             <button>Delete</button>
         </div>
