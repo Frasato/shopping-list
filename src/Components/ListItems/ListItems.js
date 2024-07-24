@@ -5,7 +5,14 @@ import { Link } from "react-router-dom";
 
 export default function ListItems(){
 
-    const {items} = useContext(Context);
+    const {items, setItems} = useContext(Context);
+
+    function delItem(id){
+        const updateList = items.filter((item, index) =>{
+            return index !== id;
+        });
+        setItems(updateList);
+    }
 
     return(
         <div>
@@ -13,7 +20,7 @@ export default function ListItems(){
             <div className="items">
                 {items.map((item, id)=>{
                     return(
-                        <Item key={id} itemName={item.itemName} itemValue={item.itemQuantity}/>
+                        <Item key={id} itemName={item.itemName} itemValue={item.itemQuantity} deleteItem={() => delItem(id)}/>
                     )
                 })}
             </div>
