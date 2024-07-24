@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Context } from "../../Context/Context";
 import Item from './Item/Item.js';
 import { Link } from "react-router-dom";
@@ -6,6 +6,18 @@ import { Link } from "react-router-dom";
 export default function ListItems(){
 
     const {items, setItems} = useContext(Context);
+
+    useEffect(()=>{
+        const storageItems = localStorage.getItem('listItems');
+        if(storageItems){
+            const convertedItems = JSON.parse(storageItems);
+            setItems(convertedItems);
+        }
+    },[]);
+
+    useEffect(()=>{
+        localStorage.setItem('listItems', JSON.stringify(items));
+    }, [items]);
 
     function delItem(id){
         const updateList = items.filter((item, index) =>{

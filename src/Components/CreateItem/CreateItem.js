@@ -1,12 +1,17 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Context } from "../../Context/Context";
 
 export default function CreateItem(){
 
+    
     const [name, setName] = useState('');
     const [quantity, setQuantity] = useState(0);
     const {items, setItems} = useContext(Context);
-
+    
+    useEffect(()=>{
+        localStorage.setItem('listItems', JSON.stringify(items));
+    }, [items]);
+    
     function handleName(element){
         setName(element.target.value);
     }
