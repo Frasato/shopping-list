@@ -3,6 +3,7 @@ import { Context } from "../../Context/Context";
 import Item from './Item/Item.js';
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import "../../styles/listItem.css";
 
 export default function ListItems(){
 
@@ -29,8 +30,8 @@ export default function ListItems(){
     }
 
     return(
-        <div>
-            <Link to="/create">Create</Link>
+        <div className="list-container">
+            <Link to="/create" className="button-create">Create</Link>
             <div className="items">
                 {items.map((item, id)=>{
                     return(

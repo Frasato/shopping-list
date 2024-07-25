@@ -1,0 +1,19 @@
+.list-container{
+    background-color: white;
+    width: 45vw;
+    height: 70vh;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.button-create{
+    margin: 30px 0;
+    width: 90px;
+    height: 25px;
+    text-align: center;
+}
+
+.button-create:hover{
+    background-color: rgba(255, 255, 0, 1);
+}
