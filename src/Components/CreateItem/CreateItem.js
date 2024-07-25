@@ -1,9 +1,9 @@
 import { useContext, useState, useEffect } from "react";
 import { Context } from "../../Context/Context";
 import { toast } from "react-toastify";
+import { IoIosAddCircle } from "react-icons/io";
 
 export default function CreateItem(){
-
     
     const [name, setName] = useState('');
     const [quantity, setQuantity] = useState(0);
@@ -34,7 +34,6 @@ export default function CreateItem(){
             setName('');
             setQuantity(0);
         }
-
         toast.success("Sucess to create item!");
     }
 
@@ -42,7 +41,7 @@ export default function CreateItem(){
         <div>
             <input type="text" placeholder="Item name" value={name} onChange={handleName} required/>
             <input type="number" placeholder="000" value={quantity || ''} onChange={handleQuantity} required/>
-            <button onClick={handleAdd}>Add</button>
+            <button onClick={handleAdd}><IoIosAddCircle /></button>
         </div>
     );
 }
