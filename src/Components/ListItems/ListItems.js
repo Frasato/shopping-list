@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { Context } from "../../Context/Context";
 import Item from './Item/Item.js';
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function ListItems(){
 
@@ -24,6 +25,7 @@ export default function ListItems(){
             return index !== id;
         });
         setItems(updateList);
+        toast.success("Item deleted...");
     }
 
     return(

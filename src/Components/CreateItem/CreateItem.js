@@ -1,5 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import { Context } from "../../Context/Context";
+import { toast } from "react-toastify";
 
 export default function CreateItem(){
 
@@ -33,6 +34,8 @@ export default function CreateItem(){
             setName('');
             setQuantity(0);
         }
+
+        toast.success("Sucess to create item!");
     }
 
     return(
