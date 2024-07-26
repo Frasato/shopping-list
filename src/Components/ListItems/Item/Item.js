@@ -1,12 +1,13 @@
 import { FaTrash } from "react-icons/fa";
+import "../../../styles/items.css";
 
 export default function Item({itemName, itemValue, deleteItem}){
     return(
-        <div>
-            <h1>{itemName}</h1>
-            <h2>{itemValue}</h2>
-            <input type="checkbox"/>
-            <button onClick={deleteItem}><FaTrash /></button>
+        <div className="items-container">
+            <h1 className="name-item">{itemName}</h1>
+            <h2 className="item-value">{itemValue}</h2>
+            <input type="checkbox" className="check-item"/>
+            <button onClick={deleteItem} className="delete-item"><FaTrash /></button>
         </div>
     );
 }
