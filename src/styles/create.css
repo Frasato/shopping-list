@@ -1,0 +1,60 @@
+.container-create{
+    background:
+      conic-gradient(from -45deg at calc(100%/3) calc(100%/3), #282828 90deg, #0000 0),
+      conic-gradient(from -135deg at calc(100%/3) calc(2*100%/3), #282828 90deg, #000000 0 135deg, #0000 0),
+      conic-gradient(from 135deg at calc(2*100%/3) calc(2*100%/3), #282828 90deg, #000000 0 135deg, #0000 0),
+      conic-gradient(from 45deg at calc(2*100%/3) calc(100%/3), #282828 90deg, #000000 0 135deg, #0000 0,#282828 0 225deg,#000000 0);
+    background-size: 24px 24px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.continar-items{
+    background-color: white;
+    height: 60vh;
+    width: 600px;
+    border-radius: 8px;
+    display: grid;
+    grid-template-areas: 
+    'back back back back'
+    'name name name name'
+    'quant quant quant btn';
+    padding: 50px;
+    place-items: center;
+}
+
+.back-button{
+    grid-area: back; 
+    text-align: center;
+    justify-self: start;
+}
+
+.name-item{
+    background-color: rgb(238, 238, 238);
+    height: 50px;
+    width: 510px;
+    grid-area: name;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.quant-item{
+    background-color: rgb(238, 238, 238);
+    height: 50px;
+    grid-area: quant;
+    padding: 10px;
+    border-radius: 8px;
+    margin: -70px 0 0 0;
+}
+
+.add-item{
+    grid-area: btn;
+    width: 280px;
+    height: 50px;
+    margin: -70px 0 0 20px;
+    border-radius: 8px;
+}
+
+.add-item:hover{cursor: pointer;}
